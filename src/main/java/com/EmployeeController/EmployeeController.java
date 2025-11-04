@@ -56,4 +56,9 @@ public class EmployeeController {
 		return es.getUpdateSigById(f, e);
 	}
 	
+	@GetMapping(value = "/getMax")
+	public EmployeeEntity getMax() {
+		return es.getMax();
+	}
+	
 }

@@ -1,5 +1,6 @@
 package com.EmployeeService;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,10 @@ public class EmployeeService {
 	public EmployeeEntity getEmpById(int h) {
 		return ed.getEmpById(h);
 	}
-	
+
+	public EmployeeEntity getMax() {
+		List<EmployeeEntity> x = ed.getAllEmp();
+		return x.stream().max(Comparator.comparing(EmployeeEntity::getSalary)).get();
+	}
+
 }
